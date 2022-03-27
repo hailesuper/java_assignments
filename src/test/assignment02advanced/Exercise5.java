@@ -37,14 +37,14 @@ public class Exercise5 {
 //        System.out.println("----- Question 8: ------");
 //        question8CreateAccountOrDepartment();
 
-//        System.out.println("----- Question 9: ------");
-//        question9AddGroup();
+        System.out.println("----- Question 9: ------");
+        question9AddGroup();
 
 //        System.out.println("----- Question 10: ------");
 //        question10CreateAccountOrDepartmentAddGroupAccount();
 
-        System.out.println("----- Question 11: ------");
-        question11();
+//        System.out.println("----- Question 11: ------");
+//        question11();
 
     }
 
@@ -262,6 +262,25 @@ public class Exercise5 {
         } else {
             System.out.println("Group/ Account nhập không chính xác.");
         }
+
+        // CACH 2 DUNG ARRAY
+//        Account account = accounts[findAccountIndex];
+//        Group[] groupTemp = new Group[account.groups.length+1];
+//        for (int i = 0;i<account.groups.length;i++) {
+//            groupTemp[i] = account.groups[i];
+//        }
+//        groupTemp[groupTemp.length-1] = groups[findGroupIndex];
+//        account.groups = groupTemp;
+
+        // CACH 1 OPTIMIZED
+//        	Account account = accounts[findAccountIndex];
+//        	System.out.println("Trước khi thêm " + account.groups.length);
+//        	List<Group> newGroupAccounts = new ArrayList<>(Arrays.asList(account.groups));
+//        	newGroupAccounts.add(groups[findGroupIndex]);
+//        	account.groups = newGroupAccounts.toArray(account.groups);
+//        	System.out.println("sau khi thêm" + account.groups.length);
+
+
 
     }
 //            Question 10: Tiếp tục Question 8 và Question 9
