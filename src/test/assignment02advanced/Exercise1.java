@@ -23,7 +23,6 @@ public class Exercise1 {
         checkDev(accounts[1]); // Question 4
 
         System.out.println("----- Question 5 -----");
-        Group[] groups = importGroup();
         for (int i=0; i < groups[0].accounts.length; i++)
             System.out.println(groups[0].accounts[i]);
         checkNumbersOfAccountsInGroup(groups[0]);

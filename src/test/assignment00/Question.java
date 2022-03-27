@@ -9,4 +9,5 @@ public class Question {
     public QuestionType questionType;
     public Account creator;
     public LocalDate createDate;
+    public Exam[] exams;
 }

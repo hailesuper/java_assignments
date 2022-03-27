@@ -1,2 +1,4 @@
-package test.assignment04;public class Exercise1 {
+package test.assignment04;
+
+public class Exercise1 {
 }

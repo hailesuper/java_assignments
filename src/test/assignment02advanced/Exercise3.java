@@ -1,63 +1,66 @@
 package test.assignment02advanced;
 
+import test.assignment00.*;
+
+import java.text.DateFormat;
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
+import java.time.format.FormatStyle;
+import java.util.Date;
 import java.util.Formatter;
 import java.util.Locale;
 
+import static test.assignment00.Program.*;
+
 public class Exercise3 {
     public static void main(String[] args) {
-        System.out.println("----- Question 1: ------");
-//        question1();
-        StringBuilder sb = new StringBuilder();
-        // Send all output to the Appendable object sb
-        Formatter formatter = new Formatter(sb, Locale.US);
+//        Locale vietnameseLocale = new Locale("vi");
+//        DateFormat df = DateFormat.getDateInstance(DateFormat.DEFAULT, vietnameseLocale);
+//        System.out.println("Print NOW");
+//        System.out.println(df.format(new Date()));
+//
+//        System.out.println("Print aDate");
+//        System.out.println(df.format(new Date(2022,1,30)));
+//
+//        System.out.println("Print LocalDate");
+//        System.out.println(exams[0].createDate);
+//        System.out.println(df.format(exams[0].createDate));
 
-        // Explicit argument indices may be used to re-order output.
-        formatter.format("%4$2s %3$2s %2$2s %1$2s", "a", "b", "c", "d");
-        // -> " d  c  b  a"
+//        System.out.println("----- Question 1 -----");
+//        System.out.println(exams[0].createDate);
+//        question1(exams[0]);
 
-        // Optional locale as the first argument can be used to get
-        // locale-specific formatting of numbers.  The precision and width can be
-        // given to round and align the value.
-        formatter.format(Locale.FRANCE, "e = %+10.4f", Math.E);
-        // -> "e =    +2,7183"
-
-        // The '(' numeric flag may be used to format negative numbers with
-        // parentheses rather than a minus sign.  Group separators are
-        // automatically inserted.
-        System.out.printf("Amount gained or lost since last statement: $ %(,.2f",
-                6217.58);
-        System.out.println();
-        System.out.printf("Amount gained or lost since last statement: $ %(,.2f",
-                -6324217.58);
-        // -> "Amount gained or lost since last statement: $ (6,217.58)"
+        System.out.println("----- Question 2 -----");
+        question2(exams[0]);
     }
 
+//    Exercise 3 (Optional): Date Format
 //    Question 1:
-//    Khai báo 1 số nguyên = 5 và sử dụng lệnh System out printf để in ra số
-//    nguyên đó
-    public static void question1() {
-        int n = 5;
-        System.out.printf("n = ", n);
+//    In ra thông tin Exam thứ 1 và property create date sẽ được format theo định
+//    dạng vietnamese
+    public static Locale vietnameseLocale = new Locale("vi");
 
+    public static void question1(Exam exam) {
+        DateFormat df = DateFormat.getDateInstance(DateFormat.DEFAULT, vietnameseLocale);
+        System.out.println(df.format(exam.createDate));
     }
 //    Question 2:
-//    Khai báo 1 số nguyên = 100 000 000 và sử dụng lệnh System out printf để in
-//    ra số nguyên đó thành định dạng như sau: 100,000,000
+//    In ra thông tin: Exam đã tạo ngày nào theo định dạng
+//    Năm – tháng – ngày – giờ – phút – giây
+    private static void question2(Exam exam) {
+        DateTimeFormatter formatter = DateTimeFormatter.ofLocalizedDateTime(FormatStyle.FULL);
+        System.out.println("Ngày tạo exam " + exam.examID + exam.createDate.format(formatter));
+    }
 //    Question 3:
-//    Khai báo 1 số thực = 5,567098 và sử dụng lệnh System out printf để in ra số
-//    thực đó chỉ bao gồm 4 số đằng sau
-//    Question 4:
-//    Khai báo Họ và tên của 1 học sinh và in ra họ và tên học sinh đó theo định
-//    dạng như sau:
-//    Họ và tên: "Nguyễn Văn A" thì sẽ in ra trên console như sau:
-//    Tên tôi là "Nguyễn Văn A" và tôi đang độc thân.
+//    Chỉ in ra năm của create date property trong Question 2
 //
-//            Question 5:
-//    Lấy thời gian bây giờ và in ra theo định dạng sau:
-//            24/04/2020 11h:16p:20s
-//    Question 6:
-//    In ra thông tin account (như Question 8 phần FOREACH) theo định dạng
-//    table (giống trong Database)
+//            4
+//
+//    Question 4:
+//    Chỉ in ra tháng và năm của create date property trong Question 2
+//    Question 5:
+//    Chỉ in ra "MM-DD" của create date trong Question 2
 
 }
 
