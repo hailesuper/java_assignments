@@ -10,6 +10,7 @@ import java.time.format.FormatStyle;
 import java.util.Date;
 import java.util.Formatter;
 import java.util.Locale;
+import java.util.Random;
 
 import static test.assignment00.Program.*;
 
@@ -52,6 +53,8 @@ public class Exercise3 {
         DateTimeFormatter formatter = DateTimeFormatter.ofLocalizedDateTime(FormatStyle.FULL);
         System.out.println("Ngày tạo exam " + exam.examID + exam.createDate.format(formatter));
     }
+
+
 //    Question 3:
 //    Chỉ in ra năm của create date property trong Question 2
 //

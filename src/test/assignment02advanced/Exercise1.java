@@ -56,14 +56,6 @@ public class Exercise1 {
         System.out.println();
 
         System.out.println("----- Question 15 -----");
-
-
-
-
-
-
-
-
     }
     // Question 1
     public static void checkDepartment(Account account) {

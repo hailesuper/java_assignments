@@ -12,6 +12,7 @@ public class Account {
     public Position position;
     public LocalDate createDate;
     public Group[] groups;
+    public float salary;
 
     @Override
     public String toString() {
