@@ -98,22 +98,24 @@ public class Exercise1 {
     public static void question3() {
         String numberString = question2String();
         // substirng
-        System.out.println("2 số cuối là (substring): " + numberString.substring(3));
-        // String.valueOf
+//        System.out.println("2 số cuối là (substring): " + numberString.substring(3));
+//        // String.valueOf
         int length = numberString.length();
-        String last2Digits = String.valueOf(numberString.charAt(length-2))
-                + String.valueOf(numberString.charAt(length-1));
-        System.out.println("2 số cuối là (substring): " + last2Digits);
-//        String.valueOf(numberString.charAt(length-2) + numberString.charAt(length-1)) // WHY WRONG?
+////        String last2Digits = String.valueOf(numberString.charAt(length-2))
+////                + String.valueOf(numberString.charAt(length-1));
+////        System.out.println("2 số cuối là (substring): " + last2Digits);
+        String temp = String.valueOf(numberString.charAt(length-2) + numberString.charAt(length-1)); // WHY WRONG?
+        System.out.println(temp);
 //        String last2Digits = String.valueOf(numberString.charAt(length-2))
 //                + String.valueOf(numberString.charAt(length-1));
-        // StringBuilder
-        char[] last2DigitsArray = new char[2];
-        numberString.getChars(length-2, length,last2DigitsArray,0);
-//        last2Digits = Arrays.toString(last2DigitsArray); // [2, 7]
-        StringBuilder last2DigitsBuilder = new StringBuilder();
-        last2DigitsBuilder.append(last2Digits);
-        System.out.println("2 số cuối là (String Builder): " + last2DigitsBuilder);
+//        System.out.println(last2Digits);
+//        // StringBuilder
+//        char[] last2DigitsArray = new char[2];
+//        numberString.getChars(length-2, length,last2DigitsArray,0);
+////        last2Digits = Arrays.toString(last2DigitsArray); // [2, 7]
+//        StringBuilder last2DigitsBuilder = new StringBuilder();
+//        last2DigitsBuilder.append(last2Digits);
+//        System.out.println("2 số cuối là (String Builder): " + last2DigitsBuilder);
     }
 //        Question 4:
 //        Viết 1 method nhập vào 2 số nguyên a và b và trả về thương của chúng

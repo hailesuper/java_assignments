@@ -100,7 +100,7 @@ public class Program {
         int[] a = new int[1000];
         Group group1 = new Group();
         group1.groupID = 1;
-        group1.groupName = "Army";
+        group1.groupName = "Java Army";
         group1.creator = accounts[0];
         group1.createDate = LocalDate.of(2022,9,12);
         group1.accounts = new Account[] {accounts[0], accounts[1]};
