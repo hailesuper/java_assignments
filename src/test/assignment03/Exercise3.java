@@ -60,7 +60,7 @@ public class Exercise3 {
 //    Khởi tạo 1 số Integer có value là chữ "1234567"
 //    Sau đó convert số trên thành datatype int
     public static void question3() {
-        Integer numberIntWrapper = 1234567;
+        Integer numberIntWrapper = Integer.valueOf("1234567");
         int number = numberIntWrapper;
         System.out.println(number);
     }

@@ -2,10 +2,7 @@ package test.assignment03;
 
 import test.assignment00.Group;
 
-import java.util.ArrayList;
-import java.util.Locale;
-import java.util.Objects;
-import java.util.Scanner;
+import java.util.*;
 
 import static test.assignment00.Program.groups;
 
@@ -63,8 +60,11 @@ public class Exercise4 {
                 case 15:
                     question15();
                     break;
+                case 16:
+                    question1Tuoi();
+                    break;
             }
-            System.out.print("Bạn có muốn tiếp túc (Y/N)? ");
+            System.out.print("Bạn có muốn tiếp tujc (Y/N)? ");
             if (scanner.nextLine().toLowerCase().equals("n"))
                 isDone = true;
         }
@@ -107,6 +107,18 @@ public class Exercise4 {
             count++;
         System.out.printf("Số lượng từ trong \"%s\" là\n%d\n", string, count);
         return string;
+    }
+
+    public static void question1Tuoi() {
+        System.out.println("Nhập vào String: ");
+        Scanner tuoiScanner = new Scanner(System.in); // scan hinh anh, scan pdf
+        String string = tuoiScanner.nextLine();
+        string = string.trim();
+        string = string.replaceAll("\\s+"," ");
+        String[] strings = string.split(" ");
+        int count = strings.length;
+        System.out.println(count);
+
     }
 
     // LATER
@@ -370,12 +382,26 @@ public class Exercise4 {
 
     }
 //    Question 16 (Optional):
-//
-//            4
-//
 //    Cho một chuỗi str và số nguyên n >= 0. Chia chuỗi str ra làm các phần
 //    bằng nhau với n ký tự. Nếu chuỗi không chia được thì xuất ra màn
 //    hình “KO”.
 //
+    public static void question16() {
+        System.out.print("Nhập chuỗi: ");
+        String string = scanner.nextLine();
+        System.out.println("Chiều dài mỗi phần tử sau khi tách: ");
+        int elementLength = scanner.nextInt();
+        scanner.nextLine();
+        ArrayList<String> splitString = new ArrayList<>();
+        if (string.length() < elementLength) {
+            System.out.println("Chiều dài string < số lượng mỗi string sau tách");
+            return;
+        }
+        String[] splitStrings = new String[string.length()];
+        for (int i=0; i<string.length()-(elementLength+1); i+= elementLength) {
+
+        }
+//        string.substring();
+    }
 
 }

@@ -91,7 +91,7 @@ public class Exercise5 {
         departments.add(department4);
         departments.add(department5);
 
-//        Department[] departmentsArray = (Department[]) departments.toArray();
+//        Department[] departmentsArray = (Department[]) departments.toArray(departments);
 //        for (Department department : departmentsArray) {
 //            System.out.println(department.departmentName);
 //        }
@@ -118,8 +118,14 @@ public class Exercise5 {
             System.out.println(department);
         }
     }
-
-
+//        Question 7: Khởi tạo 1 array học sinh gồm 5 Phòng ban, sau đó in ra danh
+//        sách phòng ban được sắp xếp theo tên
+//        VD:
+//        Accounting
+//        Boss of director
+//        Marketing
+//        waiting room
+//        Sale
     public static void question7() {
         var department1 = new Department((byte) 1, "Board of directors");
         var department2 = new Department((byte) 2, "Sales");
@@ -166,11 +172,4 @@ public class Exercise5 {
 
 
 
-//        Question 7: Khởi tạo 1 array học sinh gồm 5 Phòng ban, sau đó in ra danh
-//        sách phòng ban được sắp xếp theo tên
-//        VD:
-//        Accounting
-//        Boss of director
-//        Marketing
-//        waiting room
-//        Sale
+

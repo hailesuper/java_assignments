@@ -119,14 +119,21 @@ public class Exercise1 {
     }
 //        Question 4:
 //        Viết 1 method nhập vào 2 số nguyên a và b và trả về thương của chúng
-    public static void question4() {
+    public static double question4() {
         System.out.print("Nhập vào số bị chia: ");
         int divident = scanner.nextInt();
         scanner.nextLine();
         System.out.print("Nhập vào số chia: ");
         int divisor = scanner.nextInt();
         scanner.nextLine();
-        System.out.printf(locale, "Kết quả Thương của %d chia %d là %,.2f\n", divident, divisor, (double) divident/divisor);
+        double quotient = divident/divisor;
+        if (divisor == 0) {
+            System.out.println("Không thể thực hiện phép chia 0");
+            return -1;
+        } else
+            System.out.printf(locale, "Kết quả Thương của %d chia %d là %,.2f\n", divident, divisor, quotient);
+        return quotient;
+
     }
 }
 

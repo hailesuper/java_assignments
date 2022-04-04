@@ -7,6 +7,11 @@ public class Department {
     public Department() {
     }
 
+    public Department(String departmentName) {
+        this.departmentName = departmentName;
+        this.departmentID = 0;
+    }
+
     public Department(byte departmentID, String departmentName) {
         this.departmentID = departmentID;
         this.departmentName = departmentName;
