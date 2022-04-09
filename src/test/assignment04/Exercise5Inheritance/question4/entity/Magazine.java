@@ -6,6 +6,9 @@ public class Magazine extends Document {
     private int version;
     private YearMonth yearMonth;
 
+    public Magazine() {
+    	super();
+    }
     public Magazine(int id, String publisher, int publishedAmount, int version, YearMonth yearMonth) {
         super(id, publisher, publishedAmount);
         this.version = version;
@@ -22,4 +25,9 @@ public class Magazine extends Document {
                 ", yearMonth=" + yearMonth +
                 '}';
     }
+	@Override
+	public void inputFromConsole() {
+		// TODO Auto-generated method stub
+		
+	}
 }

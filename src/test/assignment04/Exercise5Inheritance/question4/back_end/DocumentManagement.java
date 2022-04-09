@@ -17,50 +17,48 @@ public class DocumentManagement {
     public static void addDocument() {
         printDocumentTypes();
         int select = scanIntIn();
+        Document doc = null;
         switch (select) {
             case 1:
-                Book book = new Book(inputID(),inputPublisher(),inputPublishedAmount(),
-                        inputBookAuthor(),inputPageAmount());
-                documents.add(book);
-                documentIDs.add(book.getID());
+            	doc = new Book();
+                
                 break;
             case 2:
-                Magazine magazine = new Magazine(inputID(),inputPublisher(),inputPublishedAmount(),
-                        inputMagazineVersion(), inputPublishedMonth());
-                documents.add(magazine);
-                documentIDs.add(magazine.getID());
+            	doc = new Magazine();
                 break;
             case 3:
-                Newspaper newspaper = new Newspaper(inputID(),inputPublisher(),inputPublishedAmount(),
-                        inputPublishedDate());
-                documents.add(newspaper);
-                documentIDs.add(newspaper.getID());
+            	doc = new Newspaper();
                 break;
             default:
-                System.out.println("Nhập quần què!");
+                System.out.println("Nháº­p quáº§n quÃ¨!");
                 break;
         }
-        if (select == 1 || select == 2 || select == 3)
-            System.out.println("Tài liệu thêm: " + documents.get(documents.size() - 1));
+        if(doc!= null) {
+	        doc.inputFromConsole();
+        	documents.add(doc);
+	        documentIDs.add(doc.getID());
+        }
+        if (select == 1 || select == 2 || select == 3) // xem co cach nao ko can or nhieu th nay ko?
+            System.out.println("TÃ i liá»‡u thÃªm: " + documents.get(documents.size() - 1));
 
     }
 
     public static void removeDocumentById() {
-        System.out.print("Nhập ID tài liệu cần xóa: ");
+        System.out.print("Nháº­p ID tÃ i liá»‡u cáº§n xÃ³a: ");
         int inputID = scanIntIn();
         boolean isFound = false;
         for (Document document : documents)
             if (document.getID() == inputID) {
-                System.out.println("Xóa " + document);
+                System.out.println("XÃ³a " + document);
                 documents.remove(document);
                 isFound = true;
                 return;
             }
-        System.out.println("Tài liệu " + inputID + " không tồn tại");
+        System.out.println("TÃ i liá»‡u " + inputID + " khÃ´ng tá»“n táº¡i");
     }
 
     public static void showDocumentList() {
-        System.out.println("----- DANH SÁCH TÀI LIỆU -----");
+        System.out.println("----- DANH SÃ�CH TÃ€I LIá»†U -----");
         for (Document document : documents)
             System.out.println(document);
     }
@@ -68,95 +66,32 @@ public class DocumentManagement {
     public static void findDocumentByType() {
         printDocumentTypes();
         int select = scanIntIn();
-        Object documentType = null;
+        Class documentType = null;
+        // ddoanj nay xem co cau hinh cho 
+        //  key = numbre
+        //  value = documentType 
+        //  de tim cho gon ko
         if (select == 1)
             documentType = Book.class;
         else if (select == 2)
             documentType = Magazine.class;
         else if (select == 3)
             documentType = Newspaper.class;
-        else System.out.println("Mày tự đi mua tài liệu của mày đi!");
-        for (Document document : documents)
-            if (document.getClass() == documentType)
+        else System.out.println("MÃ y tá»± Ä‘i mua tÃ i liá»‡u cá»§a mÃ y Ä‘i!");
+        
+//        documents.stream().filter(null).forEach(null);  // thu dung stream API cua collection xem sao nhe?
+        for (Document document : documents)  
+            if (document.getClass() == documentType)  // so sanh 2 Object han che so sanh == vi khar nang sai kha cao?
                 System.out.println(document);
     }
 
     public static void printDocumentTypes() {
-        System.out.println("----- Các loại tài liệu -----");
-        System.out.println("1. Sách");
-        System.out.println("2. Tạp chí");
-        System.out.println("3. Báo");
+        System.out.println("----- CÃ¡c loáº¡i tÃ i liá»‡u -----");
+        System.out.println("1. SÃ¡ch");
+        System.out.println("2. Táº¡p chÃ­");
+        System.out.println("3. BÃ¡o");
         System.out.println("-----------------------------");
-        System.out.print("Lựa chọn: ");
+        System.out.print("Lá»±a chá»�n: ");
     }
 
-    private static int inputID() {
-        while (true) {
-            System.out.print("Nhập ID: ");
-            int inputID = scanIntIn();
-            if (documentIDs.contains(inputID))
-                System.out.println("ID bị trùng");
-            else
-                return inputID;
-        }
-    }
-
-    private static String inputPublisher() {
-        System.out.print("Nhập nhà xuất bản: ");
-        return scanner.nextLine();
-    }
-
-    private static int inputPublishedAmount() {
-        System.out.print("Số bản phát hành: ");
-        return scanIntIn();
-    }
-
-    private static String inputBookAuthor() {
-        System.out.print("Tác giả: ");
-        return scanner.nextLine();
-    }
-
-    private static int inputPageAmount() {
-        System.out.print("Số trang: ");
-        return scanIntIn();
-    }
-
-    private static int inputMagazineVersion() {
-        System.out.print("Số phát hành: ");
-        return scanIntIn();
-    }
-
-    private static YearMonth inputPublishedMonth() {
-        int month;
-        int year;
-        while (true) {
-            System.out.print("Tháng phát hành: ");
-            month = scanIntIn();
-            if (month >= 1 && month <= 12)
-                break;
-            else
-                System.out.println("Nhập sai. (1-12)");
-        }
-        while (true) {
-            System.out.print("Năm phát hành: ");
-            year = scanIntIn();
-            if (year >= 1 && year <= LocalDate.now().getYear())
-                break;
-            else
-                System.out.println("Nhập sai. (1-" + LocalDate.now().getYear() + ") ");
-        }
-        return YearMonth.of(year,month);
-    }
-
-    private static LocalDate inputPublishedDate() {
-        var formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy");
-        while (true) {
-            try {
-                System.out.print("Ngày phát hành: ");
-                return LocalDate.parse(scanner.nextLine());
-            } catch (DateTimeParseException e) {
-                System.out.println("Nhập sai định dạng. dd-MM-yyyy");
-            }
-        }
-    }
 }

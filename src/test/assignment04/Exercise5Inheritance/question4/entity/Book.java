@@ -4,6 +4,9 @@ public class Book extends Document {
     private String author;
     private int pageAmount;
 
+    public Book() {
+    	super();
+    }
     public Book(int id, String publisher, int publishedAmount, String author, int pageAmount) {
         super(id, publisher, publishedAmount);
         this.author = author;
@@ -20,4 +23,10 @@ public class Book extends Document {
                 ", publishedAmount=" + publishedAmount +
                 '}';
     }
+    
+	@Override
+	public void inputFromConsole() {
+		// TODO Auto-generated method stub
+		
+	}
 }

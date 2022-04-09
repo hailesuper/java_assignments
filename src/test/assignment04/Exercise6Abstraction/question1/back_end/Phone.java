@@ -3,7 +3,10 @@ package test.assignment04.Exercise6Abstraction.question1.back_end;
 import test.assignment04.Exercise6Abstraction.question1.entity.Contact;
 
 public abstract class Phone {
+	// chú lý biến này tránh việc khi kế thừa nhưng 
     protected Contact[] contacts = new Contact[] {};
+    
+    // mấy hàm này tai sao lại de abstract? viết common ko dc à?
     public abstract void insertContact(String name, String phoneNumber);
     public abstract void removeContact(String name);
     public abstract void updateContact(String name, String newPhone);
@@ -41,7 +44,7 @@ public abstract class Phone {
     }
     public void printContacts() {
         if (contacts.length == 0)
-            System.out.println("Thế giới này không có ai ngoài bạn!");
+            System.out.println("Tháº¿ giá»›i nÃ y khÃ´ng cÃ³ ai ngoÃ i báº¡n!");
         for (Contact contact : contacts)
             System.out.println(contact);
     }
