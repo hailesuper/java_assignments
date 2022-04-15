@@ -9,12 +9,13 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
 import java.util.Scanner;
+import java.util.concurrent.CopyOnWriteArrayList;
 
 import static test.assignment04.Exercise5Inheritance.question1_question2.back_end.Utilities.scanner;
 
 public class EmployeeManagement {
     public static Scanner scanner = new Scanner(System.in);
-    private static ArrayList<Employee> employees = new ArrayList<>();
+    private static List<Employee> employees = new CopyOnWriteArrayList<>();
 
     public static void addEmployee() {
         printPositionList();
@@ -77,8 +78,9 @@ public class EmployeeManagement {
         String fullName = scanner.nextLine().trim();
         for (Employee employee : employees) {
             if (employee.getFullName().equals(fullName)) {
-                System.out.println("Xóa " + employee);
                 employees.remove(employee);
+                System.out.println("Xóa " + employee);
+//                employees.remove(employee);
             }
         }
     }
