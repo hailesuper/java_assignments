@@ -1,7 +1,9 @@
 Student 1: 
          ID: 1
-         Họ tên: Lê Văn Hải 0Student 2: 
+         Họ tên: Lê Văn Hải 0
+Student 2: 
          ID: 2
-         Họ tên: Lê Văn Hải 1Student 3: 
+         Họ tên: Lê Văn Hải 1
+Student 3: 
          ID: 3
          Họ tên: Lê Văn Hải 2
