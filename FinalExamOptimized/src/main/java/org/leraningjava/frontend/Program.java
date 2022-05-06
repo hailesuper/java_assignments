@@ -7,11 +7,11 @@ import static org.leraningjava.utils.ScannerUtils.inputSelect;
 public class Program {
     private static final Function function = new Function();
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InterruptedException {
         menuLogin();
     }
 
-    private static void menuLogin() {
+    private static void menuLogin() throws InterruptedException {
         System.out.println("----- LOGIN -----");
         User user = function.login();
         if (user.getRole() == User.Role.ADMIN)
@@ -20,7 +20,7 @@ public class Program {
             menuEmployee();
     }
 
-    private static void menuAdmin() {
+    private static void menuAdmin() throws InterruptedException {
         while (true) {
             printSelectionAdmin();
             int select = inputSelect(1,5," Lựa chọn quần què.");

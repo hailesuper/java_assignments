@@ -27,7 +27,7 @@ public class ScannerUtils {
     public static String inputPassword() {
         while (true) {
             String password = scanner.nextLine().trim();
-            String passwordRegex = "^.*[A-Z].*${6,12}";
+            String passwordRegex = "^(?=.*[A-Z])(?=\\S+$).{6,12}$";
             if (!isValidString(password,passwordRegex)) {
                 System.out.println("Nhập sai định dạng passowrd (6-12 ký tự, ít nhất 1 ký tự hoa)");
                 System.out.print("Nhập lại password: ");

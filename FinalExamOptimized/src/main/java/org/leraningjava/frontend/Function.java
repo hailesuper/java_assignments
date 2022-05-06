@@ -63,7 +63,7 @@ public class Function {
             System.out.println("Xóa thất bại!");
     }
 
-    public void addUser() {
+    public void addUser() throws InterruptedException {
         System.out.println("----- THÊM USER -----");
         System.out.print("Họ và tên: ");
         String fullName = inputFullName();
@@ -86,6 +86,7 @@ public class Function {
             User.Role role = EMPLOYEE;
             isCreationSucessful = userController.addUser(fullName, email, password, role, NULL, proSkill);
         }
+        Thread.sleep(200);
         if (isCreationSucessful) {
             System.out.println("Thêm user thành công!");
             printUsers();
