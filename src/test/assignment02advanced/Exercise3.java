@@ -42,6 +42,7 @@ public class Exercise3 {
 //    dạng vietnamese
     public static Locale vietnameseLocale = new Locale("vi");
 
+
     public static void question1(Exam exam) {
         DateFormat df = DateFormat.getDateInstance(DateFormat.DEFAULT, vietnameseLocale);
         System.out.println(df.format(exam.createDate));

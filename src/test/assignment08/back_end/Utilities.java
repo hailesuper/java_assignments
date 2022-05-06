@@ -1,10 +1,9 @@
-package Utilities;
+package test.assignment08.back_end;
 
 import java.util.Scanner;
 
 public class Utilities {
     public static Scanner scanner = new Scanner(System.in);
-
     public static int scanIntIn() {
         int inputInt;
         while (true) {
